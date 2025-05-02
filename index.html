@@ -77,5 +77,23 @@
     loadResponse();
   </script>
 
+  <hr/>
+
+  <h2>Funzionamento</h2>
+  <ul>
+  <li>Definisce l'URL dell'API da cui recuperare il JSON: <code>https://api.npoint.io/ea7f0ebfd32da3cc341f</code></li>
+  <li>Seleziona gli elementi HTML per il caricamento, il risultato e l'errore tramite <code>getElementById</code></li>
+  <li>Avvia la funzione asincrona <code>loadResponse()</code></li>
+  <li>Registra il tempo di inizio con <code>Date.now()</code> per calcolare il ritardo effettivo</li>
+  <li>Effettua una richiesta <code>fetch</code> al JSON remoto e attende la risposta</li>
+  <li>Analizza il corpo della risposta come JSON con <code>await response.json()</code></li>
+  <li>Calcola quanto tempo è passato e, se meno di 500ms, attende il tempo restante con <code>setTimeout</code></li>
+  <li>Nasconde il messaggio di caricamento con <code>loading.style.display = 'none'</code></li>
+  <li>Verifica se il campo <code>response</code> è presente nel JSON</li>
+  <li>Se sì, scrive il valore in maiuscolo nel <code>div</code> di risultato e lo mostra</li>
+  <li>Se il campo è assente o c’è un errore nella richiesta, mostra un messaggio di errore</li>
+  <li>Stampa eventuali errori nella console con <code>console.error</code></li>
+</ul>
+
 </body>
 </html>
